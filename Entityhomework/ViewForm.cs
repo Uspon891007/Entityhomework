@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entityhomework.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace Entityhomework
         public ViewForm()
         {
             InitializeComponent();
+            BindData();
+        }
+        private void BindData()
+        {
+            var context = new ContactsModel();
+            var list = context.ContactsTable.ToList();
+            dataGridView1.DataSource = list;
+        }
+
+        private void ViewForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
