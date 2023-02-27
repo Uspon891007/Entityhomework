@@ -24,7 +24,8 @@ namespace Entityhomework
             var data = contacts.ContactsTable.ToList();
             if(data.Any((x) => x.Id == textBox1.Text))
             {
-                dataGridView1.DataSource = data;
+                var datas = contacts.ContactsTable.Where((x) => x.Id == textBox1.Text).ToList();
+                dataGridView1.DataSource = datas;
             }
             else
             {

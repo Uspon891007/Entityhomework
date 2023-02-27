@@ -5,10 +5,12 @@ namespace Entityhomework.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.IO;
 
     [Table("ContactsTable")]
     public partial class ContactsTable
     {
+        
         [StringLength(50)]
         public string Id { get; set; }
 
@@ -24,4 +26,6 @@ namespace Entityhomework.Models
         [StringLength(50)]
         public string category { get; set; }
     }
+
+    
 }

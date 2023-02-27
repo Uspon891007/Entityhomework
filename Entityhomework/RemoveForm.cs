@@ -24,7 +24,8 @@ namespace Entityhomework
             var data = contacts.ContactsTable.ToList();
             if(data.Any((x) => x.Id == textBox1.Text))
             {
-                foreach(var item in data)
+                var datas = contacts.ContactsTable.Where((x) => x.Id == textBox1.Text).ToList();
+                foreach (var item in datas)
                 {
                     contacts.ContactsTable.Remove(item);
                     contacts.SaveChanges();
